@@ -1,5 +1,5 @@
 const express = require('express');
-const notes = require('./public/routes/notes')
+const notesPage = require('./public/routes/notes')
 const landingPage = require('./public/routes/landingpage')
 
 const PORT = 3001;
