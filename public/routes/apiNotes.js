@@ -2,20 +2,10 @@ const notesRouter = require('express').Router()
 const notes = require('../../db/db.json')
 const fs = require('fs')
 const path = require('path')
+const uniqueID = require('../../helpers/uuid')
 
 notesRouter.get('/', (req,res)=>{
-    fs.readFile(path.join(__dirname, '../../db/db.json'), 'utf8', (err, data) => {
-           if (err) {
-               console.error(err)
-           }
-           else {
-               console.info(`Data was written to database`)
-           }
-   
-           console.info(`${req.method} request received to get notes`)
-           console.log(data)
-           res.send(data)
-       })
+   res.json(notes)
    
    })
 
@@ -28,11 +18,13 @@ notesRouter.post('/', (req, res) => {
         const newNote = {
             title,
             text,
+            id: uniqueID()
         }
 
+     
         notes.push(newNote)
 
-        const newNoteString = JSON.stringify(newNote)
+        const newNoteString = JSON.stringify(notes)
         console.log(newNoteString)
         fs.writeFile(path.join(__dirname, '../../db/db.json'), newNoteString, (err) =>
             err
