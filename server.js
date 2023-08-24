@@ -1,6 +1,7 @@
 const express = require('express');
-const notesPage = require('./public/routes/notes')
-const landingPage = require('./public/routes/landingpage')
+const notesPage = require('./public/routes/notesPage.js')
+const notesRouter = require('./public/routes/apiNotes.js')
+const landingPage = require('./public/routes/landingPage.js')
 
 const PORT = 3001;
 
@@ -12,9 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use('/notes', notes)
+app.use('/notes', notesPage)
 
-app.use('*', landingPage )
+app.use('/api/notes', notesRouter)
+
+app.use('*', landingPage)
 
 app.listen(PORT, () =>{
     console.log(`App listening at http://localhost:${PORT}`)
