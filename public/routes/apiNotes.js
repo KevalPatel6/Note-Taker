@@ -42,5 +42,24 @@ notesRouter.post('/', (req, res) => {
 
 })
 
+notesRouter.delete('/:id', (req,res)=>{
+    const id = req.params.id
+    console.log(id)
+    console.log(notes.length)
+    for (let i = 0; i < notes.length; i++) {
+        if(id === notes[i].id){
+            const spliced = notes.splice(i,1)
+           fs.writeFile(path.join(__dirname,'../../db/db.json'), spliced, (err)=> 
+           err  
+                ? console.log(err)
+                : console.log(
+                    `Deleted ${note[i].title} from database`
+                ))
+        }        
+       
+    }
+    
+})
+
 
 module.exports = notesRouter
