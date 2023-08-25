@@ -3,7 +3,7 @@ const path = require('path')
 
 
 notesPage.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../notes.html'))
+    res.sendFile(path.join(__dirname, '../public/notes.html'))
 })
 
 

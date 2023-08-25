@@ -1,7 +1,7 @@
 const express = require('express');
-const notesPage = require('./public/routes/notesPage.js')
-const notesRouter = require('./public/routes/apiNotes.js')
-const landingPage = require('./public/routes/landingPage.js')
+const notesPage = require('./routes/notesPage.js')
+const notesRouter = require('./routes/apiNotes.js')
+
 
 const PORT = 3001;
 
@@ -17,7 +17,8 @@ app.use('/notes', notesPage)
 
 app.use('/api/notes', notesRouter)
 
-app.use('*', landingPage)
+app.use('*', (req,res)=>
+res.sendFile(path.join(__dirname, '../public/index.html')))
 
 app.listen(PORT, () =>{
     console.log(`App listening at http://localhost:${PORT}`)
