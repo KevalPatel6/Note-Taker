@@ -26,7 +26,7 @@ notesRouter.post('/', (req, res) => {
 
         const newNoteString = JSON.stringify(notes)
         console.log(newNoteString)
-        fs.writeFile(path.join(__dirname, '../../db/db.json'), newNoteString, (err) =>
+        fs.writeFile(path.join(__dirname, '../db/db.json'), newNoteString, (err) =>
             err
                 ? console.log(err)
                 : console.log(
@@ -51,7 +51,7 @@ notesRouter.delete('/:id', (req,res)=>{
             console.log("Spliced Array is "+splicedNotesArr)
             const  splicedNotesString= JSON.stringify(notes)
             console.log("Spliced Array string is " + splicedNotesString)
-           fs.writeFile(path.join(__dirname,'../../db/db.json'), splicedNotesString, (err)=> 
+           fs.writeFile(path.join(__dirname,'../db/db.json'), splicedNotesString, (err)=> 
            err  
                 ? console.log(err)
                 : console.log(
