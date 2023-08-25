@@ -3,7 +3,7 @@ const notesPage = require('./routes/notesPage.js')
 const notesRouter = require('./routes/apiNotes.js')
 const path = require('path')
 
-const PORT = 3001;
+const PORT = process.env.port || 3001;
 
 const app = express();
 
