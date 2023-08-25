@@ -47,18 +47,29 @@ notesRouter.delete('/:id', (req,res)=>{
     for (let i = 0; i < notes.length; i++) {
         if(id === notes[i].id){
             console.log(notes)
+
             const splicedNotesArr = notes.splice(i,1)
+
             console.log("Spliced Array is "+splicedNotesArr)
+
             const  splicedNotesString= JSON.stringify(notes)
+
             console.log("Spliced Array string is " + splicedNotesString)
-           fs.writeFile(path.join(__dirname,'../db/db.json'), splicedNotesString, (err)=> 
-           err  
-                ? console.log(err)
-                : console.log(
-                    `Deleted note from database`
-                ))
-        }        
-    
+
+           fs.writeFile(path.join(__dirname,'../db/db.json'), splicedNotesString, (err)=>{
+
+               if(err){   
+                console.log(err)
+                res.status(500).json({error: err})
+            }
+                 else{
+                res.status(200).send()
+
+                 }
+                    
+                })        
+            }
+                
         
     }
     
