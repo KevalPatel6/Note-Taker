@@ -6,7 +6,25 @@ This is a repository for a note-taker application that can be used to write and 
 
 ## Usage
 
-In order to use this application, you will need to follow the link to the deployed application [here]. Then, the user will need to click on the 'Get Started' button which will take them to the notes page. From here, the user can type in a 'Note Title' and body text for a note, which will then reveal a save icon in the navigation bar. Clicking the save icon will save the note title to the side. The user can then click on the note to reveal the body text or click on the 'Trash Can' icon to delete the note. On the backend side, each click is handling a fetch request and rerouting to the appropriate URL to respond with the correct data. For example, when the user clicks on the save icon then the server is handling a POST request from the localhost:3001/api/notes URL. At the same time, the server is handling a GET request to be able to display the note that was just created onto the page. 
+In order to use this application, you will need to follow the link to the deployed application [here](https://shrouded-cove-46553-6c1a9c7fa2f0.herokuapp.com/notes). Below you can see a screen shot of the landing page.
+
+![Alt text](assets/landing-page.PNG)
+
+Then, the user will need to click on the 'Get Started' button which will take them to the notes page. Below you can see a screenshot of the notes page.
+
+![Alt text](assets/notes-page.PNG)
+
+From here, the user can type in a 'Note Title' and body text for a note, which will then reveal a save icon in the navigation bar. Below you can see a screenshot of the save icon appearing 
+
+![Alt text](assets/save-icon.PNG)
+
+Clicking the save icon will save the note title to the side. The user can then click on the note to reveal the body text or click on the 'Trash Can' icon to delete the note. Below you can see a screenshot of the delete icon and a screenshot of what it looks like after hitting the delete icon. 
+
+![Alt text](assets/delete-icon.PNG)
+
+![Alt text](assets/after-delete-button.PNG)
+
+On the backend side, each click is handling a fetch request and rerouting to the appropriate URL to respond with the correct data. For example, when the user clicks on the save icon then the server is handling a POST request from the localhost:3001/api/notes URL. At the same time, the server is handling a GET request to be able to display the note that was just created onto the page. 
 
 ## License
 
